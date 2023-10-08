@@ -2,10 +2,7 @@ package com.wansui.config;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -19,6 +16,7 @@ import javax.sql.DataSource;
 @ComponentScan(basePackages = "com.wansui")
 @PropertySource({"classpath:jdbc.properties"})
 @Configuration
+@EnableAspectJAutoProxy
 public class JavaConfig {
     @Value("${mysql.url}")
     private String url;
