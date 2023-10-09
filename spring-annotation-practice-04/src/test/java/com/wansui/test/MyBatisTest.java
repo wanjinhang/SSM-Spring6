@@ -43,4 +43,28 @@ public class MyBatisTest {
 
 
     }
+
+    @Test
+    public void test2() throws IOException {
+        //
+        InputStream resourceAsStream = Resources.getResourceAsStream("mybatis-config.xml");
+
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(resourceAsStream);
+
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+//        Student student = mapper.seleteStudent(2);
+//        System.out.println("student = " + student);
+        Student student = new Student();
+        student.setId(111);
+        student.setName("wansui");
+        student.setGender("男");
+        student.setAge(18);
+        student.setClasses("java");
+        int i = mapper.insertStudent(student);
+        System.out.println("i = " + i);
+        sqlSession.commit();
+        sqlSession.close();
+    }
 }

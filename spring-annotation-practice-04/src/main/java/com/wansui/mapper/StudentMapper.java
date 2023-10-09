@@ -15,4 +15,6 @@ public interface StudentMapper {
      * @return {@link Student}
      */
     Student seleteStudent(Integer studentId);
+
+    int insertStudent(Student student);
 }
