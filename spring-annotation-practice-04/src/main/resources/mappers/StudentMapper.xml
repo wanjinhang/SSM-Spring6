@@ -10,12 +10,24 @@
             resultType = 返回值类型
             标签内编写SQL语句
      -->
-    <select id="seleteStudent" resultType="com.wansui.pojos.Student">
+    <select id="selectStudent" resultType="com.wansui.pojos.Student">
         <!-- #{studentId}代表动态传入的参数,并且进行赋值!后面详细讲解 -->
         select * from students where id = #{studentId}
     </select>
-
+<!--    添加学生-->
     <insert id="insertStudent" >
         insert into students (name ,gender,age,class)values (#{name},#{gender},#{age},#{classes})
     </insert>
+<!--    //删除学生-->
+    <delete id="deleteStudent">
+        delete from students where id = #{studentId}
+    </delete>
+<!--    更新学生信息-->
+    <update id="updateStudentById" >
+        update students set name = #{name} where id = #{Id}
+    </update>
+<!--    查找班级学生-->
+    <select id="selectStudentByClasses" resultType="Student">
+        select id ,name,gender,age,class as classes from students where class = #{classes}
+    </select>
 </mapper>

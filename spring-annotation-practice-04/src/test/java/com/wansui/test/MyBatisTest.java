@@ -32,7 +32,7 @@ public class MyBatisTest {
         StudentMapper studentMapper = sqlSession.getMapper(StudentMapper.class);
 
         //调用代理类方法既可以触发对应的Sql语句
-        Student student = studentMapper.seleteStudent(1);
+        Student student = studentMapper.selectStudent(1);
         System.out.println("student = " + student);
         //提交事物
         sqlSession.commit();

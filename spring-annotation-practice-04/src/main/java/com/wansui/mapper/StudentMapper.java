@@ -14,7 +14,13 @@ public interface StudentMapper {
      * @param studentId
      * @return {@link Student}
      */
-    Student seleteStudent(Integer studentId);
-
+    Student selectStudent(Integer studentId);
+    //插入学生
     int insertStudent(Student student);
+    //删除学生
+    int deleteStudent(Integer studentId);
+    //查找班级人员
+    Student selectStudentByClasses(String classes);
+    //修改学生信息
+    int updateStudentById(Student student);
 }
