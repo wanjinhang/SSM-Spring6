@@ -1,3 +1,5 @@
+package com.wansui.test;
+
 import com.wansui.config.JavaConfig;
 import com.wansui.controller.StudentController;
 import org.junit.jupiter.api.Test;
